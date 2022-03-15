@@ -1,7 +1,10 @@
 package com.example.cryptoapp.data.mapper
 
 import com.example.cryptoapp.data.database.CoinInfoDBModel
-import com.example.cryptoapp.data.network.models.*
+import com.example.cryptoapp.data.network.models.CoinInfoDto
+import com.example.cryptoapp.data.network.models.CoinInfoJSONContainerDto
+import com.example.cryptoapp.data.network.models.CoinNamesListDto
+import com.example.cryptoapp.domian.CoinInfo
 import com.google.gson.Gson
 
 class CoinMapper {
@@ -36,6 +39,19 @@ class CoinMapper {
     }
 
     fun mapCoinNamesToCoinNamesList(coinName: CoinNamesListDto): String {
-        return coinName.nameDto?.map { it.coinNameDto?.name }?.joinToString(",") ?: ""
+        return coinName.nameDto?.map {
+            it.coinNameDto?.name
+        }?.joinToString(",") ?: ""
     }
+
+    fun mapDBModelToEntity(dbModel: CoinInfoDBModel) = CoinInfo(
+        toSymbol = dbModel.toSymbol,
+        fromSymbol = dbModel.fromSymbol,
+        price = dbModel.price,
+        lastUpdate = dbModel.lastUpdate,
+        highDay = dbModel.highDay,
+        lowDay = dbModel.lowDay,
+        lastMarket = dbModel.lastMarket,
+        imageUrl = dbModel.imageUrl
+    )
 }
