@@ -38,7 +38,7 @@ class CoinMapper {
         return result
     }
 
-    fun mapCoinNamesToCoinNamesList(coinName: CoinNamesListDto): String {
+    fun mapCoinNamesToString(coinName: CoinNamesListDto): String {
         return coinName.nameDto?.map {
             it.coinNameDto?.name
         }?.joinToString(",") ?: ""
