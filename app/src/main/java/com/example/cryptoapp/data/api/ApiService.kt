@@ -1,7 +1,7 @@
-package com.example.cryptoapp.api
+package com.example.cryptoapp.data.api
 
-import com.example.cryptoapp.pojo.CoinInfoListOfData
-import com.example.cryptoapp.pojo.CoinPriceInfoRawData
+import com.example.cryptoapp.data.models.CoinInfoListOfData
+import com.example.cryptoapp.data.models.CoinPriceInfoRawData
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
