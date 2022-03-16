@@ -1,7 +1,6 @@
 package com.example.cryptoapp.data.repoitory
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.example.cryptoapp.data.database.AppDatabase
@@ -41,12 +40,15 @@ class CoinRepositoryImpl(
 
     override suspend fun loadData() {
         while (true) {
-            val top = ApiFactory.apiService.getTopCoinsInfo(limit = 50)
-            val fSymbols = mapper.mapCoinNamesToString(top)
-            val jsonContainer = ApiFactory.apiService.getFullPriceList(fSyms = fSymbols)
-            val coinInfoDBList = mapper.mapJsonContainerToListCoinInfo(jsonContainer)
-            val dbModelList = coinInfoDBList.map { mapper.mapDtoToDBModel(it) }
-            coinInfoDAO.insertPriceList(dbModelList)
+            try {
+                val top = apiService.getTopCoinsInfo(limit = 50)
+                val fSymbols = mapper.mapCoinNamesToString(top)
+                val jsonContainer = apiService.getFullPriceList(fSyms = fSymbols)
+                val coinInfoDBList = mapper.mapJsonContainerToListCoinInfo(jsonContainer)
+                val dbModelList = coinInfoDBList.map { mapper.mapDtoToDBModel(it) }
+                coinInfoDAO.insertPriceList(dbModelList)
+            } catch (e: Exception) {
+            }
             delay(10000)
         }
     }

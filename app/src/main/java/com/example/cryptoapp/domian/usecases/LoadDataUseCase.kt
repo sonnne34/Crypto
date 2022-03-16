@@ -5,5 +5,5 @@ import com.example.cryptoapp.domian.CoinRepository
 class LoadDataUseCase(
     private val repository: CoinRepository
 ) {
-    suspend fun invoke() = repository.loadData()
+    suspend operator fun invoke() = repository.loadData()
 }
