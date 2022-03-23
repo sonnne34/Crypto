@@ -12,7 +12,7 @@ import com.example.cryptoapp.domian.CoinRepository
 import com.example.cryptoapp.workers.RefreshDataWorker
 
 class CoinRepositoryImpl(
-    application: Application
+    private val application: Application
 ) : CoinRepository {
 
     private val coinInfoDAO = AppDatabase.getInstance(application).coinPriceInfoDao()
