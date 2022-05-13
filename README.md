@@ -1,6 +1,8 @@
 # Crypto
 Information about crypto. Clean Architecture, ViewModel, RecyclerView. ListAdapter, ViewBinding, WorkManager
 
-![Cripto1](https://user-images.githubusercontent.com/60262104/168315895-6d016f98-6d89-47f6-9a88-541efc948034.png)
-![Cripto2](https://user-images.githubusercontent.com/60262104/168315917-fd549539-28ae-4a54-ab19-089ea40ac35e.png)
 
+
+
+![m_Cripto1](https://user-images.githubusercontent.com/60262104/168316133-0767152f-34c1-429c-ae7f-6ebb45cd27ae.png)
+![m_Cripto2](https://user-images.githubusercontent.com/60262104/168316161-e32255a8-1cf7-47ac-a202-107882adfd44.png)
