@@ -1,5 +1,5 @@
 # Crypto
-Information about crypto. Clean Architecture, ViewModel, RecyclerView. ListAdapter, ViewBinding, WorkManager
+ Information about crypto. Clean Architecture, ViewModel, RecyclerView. ListAdapter, ViewBinding, WorkManager
 
 
 
