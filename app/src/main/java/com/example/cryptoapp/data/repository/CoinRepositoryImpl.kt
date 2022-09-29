@@ -33,6 +33,8 @@ class CoinRepositoryImpl @Inject constructor(
         }
     }
 
+
+
     override fun loadData() {
         val workManager = WorkManager.getInstance(application)
         workManager.enqueueUniqueWork(
