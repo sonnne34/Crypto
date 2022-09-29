@@ -11,6 +11,7 @@ import com.example.cryptoapp.databinding.FragmentCoinDetailBinding
 import com.squareup.picasso.Picasso
 import javax.inject.Inject
 
+
 class CoinDetailFragment : Fragment() {
 
     private lateinit var viewModel: CoinViewModel
