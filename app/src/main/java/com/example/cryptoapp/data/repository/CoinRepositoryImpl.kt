@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
-import com.example.cryptoapp.data.database.AppDatabase
 import com.example.cryptoapp.data.database.CoinInfoDao
 import com.example.cryptoapp.data.mapper.CoinMapper
 import com.example.cryptoapp.data.workers.RefreshDataWorker
@@ -20,7 +19,7 @@ class CoinRepositoryImpl @Inject constructor(
 ) : CoinRepository {
 
     override fun getCoinInfoList(): LiveData<List<CoinInfo>> {
-        return Transformations.map(coinInfoDao.getPriceList()) {
+        return Transformations.map(coinInfoDao.getPriceList()) { it ->
             it.map {
                 mapper.mapDbModelToEntity(it)
             }
@@ -32,7 +31,6 @@ class CoinRepositoryImpl @Inject constructor(
             mapper.mapDbModelToEntity(it)
         }
     }
-
 
 
     override fun loadData() {

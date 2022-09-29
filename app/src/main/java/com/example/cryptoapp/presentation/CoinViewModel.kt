@@ -7,9 +7,9 @@ import com.example.cryptoapp.domain.LoadDataUseCase
 import javax.inject.Inject
 
 class CoinViewModel @Inject constructor(
-    private val getCoinInfoListUseCase: GetCoinInfoListUseCase,
+    getCoinInfoListUseCase: GetCoinInfoListUseCase,
     private val getCoinInfoUseCase: GetCoinInfoUseCase,
-    private val loadDataUseCase: LoadDataUseCase,
+    loadDataUseCase: LoadDataUseCase,
 ) : ViewModel() {
 
     val coinInfoList = getCoinInfoListUseCase()
